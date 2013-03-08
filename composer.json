@@ -1,0 +1,22 @@
+{
+    "name": "wlion/helpers",
+    "description": "A set of helper classes for the Laravel Framework.",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "White Lion",
+            "email": "admin@wlion.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.*",
+		"intervention/image": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Wlion\\Helpers": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
