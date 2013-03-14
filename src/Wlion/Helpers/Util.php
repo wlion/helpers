@@ -7,6 +7,29 @@ use Image;
 
 class Util {
 	/**
+	 * Crop image.
+	 * 
+	 * @param  string $image
+	 * @param  string $copy
+	 * @param  array  $specs
+	 * @return bool
+	 */
+	public function cropImage($image, $copy, $specs = array()) {
+		// Begin processing
+		if ($img = new Image($image)) {
+			// Crop and save
+			$img->crop($specs['width'], $specs['height'], $specs['left'], $specs['top']);
+			$img->save($copy);
+			
+			// Return file status
+			return file_exists($copy);
+		}
+		
+		// Default return
+		return FALSE;
+	}
+	
+	/**
 	 * Copy image and resize as needed.
 	 * 
 	 * @param  string $image
