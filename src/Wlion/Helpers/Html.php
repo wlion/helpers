@@ -29,6 +29,16 @@ class Html {
 	}
 	
 	/**
+	 * Return domain based on current url.
+	 * 
+	 * @return string
+	 */
+	public function getDomain() {
+		$parse = parse_url($this->url->getRequest()->root());
+		return $parse['host'];
+	}
+	
+	/**
 	 * Generate an HTML link.
 	 * 
 	 * @param  string $url
